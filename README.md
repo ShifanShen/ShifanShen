@@ -20,6 +20,13 @@
 </p>
 
 <!-- CODE-STATS:START -->
+### Code stats
+
+| Repositories | Code lines | Files |
+|---:|---:|---:|
+| 8 | 55,495 | 373 |
+
+Top languages: Python 23,208 | HTML 6,693 | Jupyter Notebook 4,498 | Markdown 4,323 | CSS 3,538
 <!-- CODE-STATS:END -->
 
 </td>
