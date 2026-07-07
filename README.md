@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/family-guy-dancing.gif" alt="Family Guy dancing" width="62%" />
+  <img src="./assets/family-guy-dancing.gif" alt="Family Guy dancing" width="58%" />
 </p>
 
 </td>
