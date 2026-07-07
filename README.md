@@ -19,10 +19,6 @@
   <img src="https://komarev.com/ghpvc/?username=ShifanShen&label=visitors&color=0e75b6&style=flat" />
 </p>
 
-<!-- CODE-STATS:START -->
-<img src="./assets/code-stats.svg" alt="Code stats" width="100%" />
-<!-- CODE-STATS:END -->
-
 </td>
 <td width="55%" valign="top">
 
@@ -30,12 +26,15 @@
 
 <br />
 
+<!-- CODE-STATS:START -->
+<img src="./assets/code-stats.svg" alt="Code stats" width="100%" />
+<!-- CODE-STATS:END -->
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ShifanShen&theme=github_dark" width="100%" />
-
-<br />
-
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ShifanShen&theme=github_dark" width="100%" />
-
 </td>
 </tr>
 </table>
