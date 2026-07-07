@@ -11,7 +11,7 @@
 
 - 🌱 I’m currently learning AI Agents / LLM
 - 🧑‍💻 I enjoy building useful open-source projects
-- 💬 Ask me about Python, AI, Web, and automation
+- 💬 Let’s learn Python, AI, Web, and automation together
 - 📫 How to reach me: shen_shifan@qq.com
 - 📍 Based in Shanghai, China
 
