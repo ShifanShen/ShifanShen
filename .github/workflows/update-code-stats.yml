@@ -1,0 +1,83 @@
+name: Update Code Stats
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cloc
+        run: sudo apt-get update && sudo apt-get install -y cloc
+
+      - name: Generate stats
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          python - <<'PY'
+          import os, json, subprocess, tempfile, pathlib, urllib.request
+
+          owner = os.environ["OWNER"]
+          token = os.environ["GH_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/users/{owner}/repos?per_page=100&type=owner&sort=updated",
+              headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
+          )
+          repos = [r for r in json.load(urllib.request.urlopen(req)) if not r["fork"] and not r["archived"]]
+
+          total_code = total_files = 0
+          langs = {}
+
+          with tempfile.TemporaryDirectory() as tmp:
+              for repo in repos:
+                  path = pathlib.Path(tmp) / repo["name"]
+                  subprocess.run(["git", "clone", "--depth", "1", repo["clone_url"], str(path)],
+                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                  out = subprocess.run(
+                      ["cloc", str(path), "--json", "--exclude-dir=.git,node_modules,dist,build,coverage,.next"],
+                      capture_output=True, text=True
+                  )
+                  if out.returncode != 0:
+                      continue
+                  data = json.loads(out.stdout)
+                  total_code += data.get("SUM", {}).get("code", 0)
+                  total_files += data.get("SUM", {}).get("nFiles", 0)
+                  for lang, stat in data.items():
+                      if lang not in ("header", "SUM"):
+                          langs[lang] = langs.get(lang, 0) + stat.get("code", 0)
+
+          top = sorted(langs.items(), key=lambda x: x[1], reverse=True)[:5]
+          lang_line = " · ".join(f"{k} {v:,}" for k, v in top)
+
+          block = f"""<!-- CODE-STATS:START -->
+### Code stats
+
+| Repositories | Code lines | Files |
+|---:|---:|---:|
+| {len(repos):,} | {total_code:,} | {total_files:,} |
+
+Top languages: {lang_line}
+<!-- CODE-STATS:END -->"""
+
+          readme = pathlib.Path("README.md")
+          text = readme.read_text(encoding="utf-8")
+          start = "<!-- CODE-STATS:START -->"
+          end = "<!-- CODE-STATS:END -->"
+          text = text[:text.index(start)] + block + text[text.index(end) + len(end):]
+          readme.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update code stats" || exit 0
+          git push
