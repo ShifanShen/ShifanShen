@@ -22,7 +22,7 @@ jobs:
           OWNER: ${{ github.repository_owner }}
         run: |
           python - <<'PY'
-          import os, json, subprocess, tempfile, pathlib, urllib.request
+          import html, os, json, subprocess, tempfile, pathlib, urllib.request
 
           owner = os.environ["OWNER"]
           token = os.environ["GH_TOKEN"]
@@ -53,18 +53,73 @@ jobs:
                       if lang not in ("header", "SUM"):
                           langs[lang] = langs.get(lang, 0) + stat.get("code", 0)
 
+          def compact(value):
+              if value >= 1_000_000:
+                  return f"{value / 1_000_000:.1f}m"
+              if value >= 1_000:
+                  return f"{value / 1_000:.1f}k"
+              return f"{value:,}"
+
           top = sorted(langs.items(), key=lambda x: x[1], reverse=True)[:5]
-          lang_line = " | ".join(f"{k} {v:,}" for k, v in top) or "No code found yet"
+          palette = ["#60A5FA", "#F97316", "#A78BFA", "#34D399", "#F472B6"]
+          total_top = sum(value for _, value in top) or 1
+          rows = []
+          for index, (lang, value) in enumerate(top):
+              y = 260 + index * 24
+              width = max(8, round(360 * value / total_top))
+              color = palette[index % len(palette)]
+              safe_lang = html.escape(lang)
+              rows.extend([
+                  f'<circle cx="42" cy="{y + 9}" r="5" fill="{color}"/>',
+                  f'<text x="58" y="{y + 14}" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">{safe_lang}</text>',
+                  f'<rect x="190" y="{y}" width="360" height="14" rx="7" fill="#21262D"/>',
+                  f'<rect x="190" y="{y}" width="{width}" height="14" rx="7" fill="{color}"/>',
+                  f'<text x="560" y="{y + 14}" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">{value:,}</text>',
+              ])
+          if not rows:
+              rows.append('<text x="34" y="278" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="14">No code found yet.</text>')
+
+          svg = "\n".join([
+              '<svg width="620" height="388" viewBox="0 0 620 388" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">',
+              '  <title id="title">Code Footprint</title>',
+              '  <desc id="desc">Repository, code line, file, and top language statistics.</desc>',
+              '  <defs>',
+              '    <linearGradient id="accent" x1="48" y1="52" x2="572" y2="320" gradientUnits="userSpaceOnUse">',
+              '      <stop stop-color="#6AA6FF"/>',
+              '      <stop offset="0.55" stop-color="#35D3BE"/>',
+              '      <stop offset="1" stop-color="#A78BFA"/>',
+              '    </linearGradient>',
+              '    <filter id="shadow" x="0" y="0" width="620" height="388" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">',
+              '      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.18"/>',
+              '    </filter>',
+              '  </defs>',
+              '  <rect x="8" y="8" width="604" height="372" rx="14" fill="#0D1117" filter="url(#shadow)"/>',
+              '  <rect x="8.5" y="8.5" width="603" height="371" rx="13.5" stroke="#30363D"/>',
+              '  <rect x="34" y="36" width="72" height="4" rx="2" fill="url(#accent)"/>',
+              '  <text x="34" y="72" fill="#79A7FF" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Code Footprint</text>',
+              f'  <text x="34" y="101" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="15">Across {len(repos):,} public repositories</text>',
+              '  <rect x="34" y="126" width="166" height="74" rx="12" fill="#161B22"/>',
+              '  <text x="56" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">REPOSITORIES</text>',
+              f'  <text x="56" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">{len(repos):,}</text>',
+              '  <rect x="226" y="126" width="166" height="74" rx="12" fill="#161B22"/>',
+              '  <text x="248" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">CODE LINES</text>',
+              f'  <text x="248" y="184" fill="#35D3BE" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">{compact(total_code)}</text>',
+              '  <rect x="418" y="126" width="166" height="74" rx="12" fill="#161B22"/>',
+              '  <text x="440" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">FILES</text>',
+              f'  <text x="440" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">{total_files:,}</text>',
+              '  <text x="34" y="236" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Top languages</text>',
+              '  <text x="468" y="236" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12">lines counted by cloc</text>',
+              *[f"  {row}" for row in rows],
+              '</svg>',
+          ])
+
+          assets = pathlib.Path("assets")
+          assets.mkdir(exist_ok=True)
+          (assets / "code-stats.svg").write_text(svg, encoding="utf-8")
 
           block = "\n".join([
               "<!-- CODE-STATS:START -->",
-              "### Code stats",
-              "",
-              "| Repositories | Code lines | Files |",
-              "|---:|---:|---:|",
-              f"| {len(repos):,} | {total_code:,} | {total_files:,} |",
-              "",
-              f"Top languages: {lang_line}",
+              '<img src="./assets/code-stats.svg" alt="Code stats" width="100%" />',
               "<!-- CODE-STATS:END -->",
           ])
 
@@ -80,6 +135,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.md assets/code-stats.svg
           git commit -m "Update code stats" || exit 0
           git push

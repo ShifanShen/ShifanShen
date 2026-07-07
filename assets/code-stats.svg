@@ -1,0 +1,64 @@
+<svg width="620" height="388" viewBox="0 0 620 388" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Code Footprint</title>
+  <desc id="desc">Repository, code line, file, and top language statistics.</desc>
+  <defs>
+    <linearGradient id="accent" x1="48" y1="52" x2="572" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6AA6FF"/>
+      <stop offset="0.55" stop-color="#35D3BE"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="620" height="388" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect x="8" y="8" width="604" height="372" rx="14" fill="#0D1117" filter="url(#shadow)"/>
+  <rect x="8.5" y="8.5" width="603" height="371" rx="13.5" stroke="#30363D"/>
+  <rect x="34" y="36" width="72" height="4" rx="2" fill="url(#accent)"/>
+  <text x="34" y="72" fill="#79A7FF" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Code Footprint</text>
+  <text x="34" y="101" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="15">Across 8 public repositories</text>
+
+  <rect x="34" y="126" width="166" height="74" rx="12" fill="#161B22"/>
+  <text x="56" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">REPOSITORIES</text>
+  <text x="56" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">8</text>
+
+  <rect x="226" y="126" width="166" height="74" rx="12" fill="#161B22"/>
+  <text x="248" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">CODE LINES</text>
+  <text x="248" y="184" fill="#35D3BE" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">55.5k</text>
+
+  <rect x="418" y="126" width="166" height="74" rx="12" fill="#161B22"/>
+  <text x="440" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">FILES</text>
+  <text x="440" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">373</text>
+
+  <text x="34" y="236" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Top languages</text>
+  <text x="468" y="236" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12">lines counted by cloc</text>
+
+  <circle cx="42" cy="261" r="5" fill="#60A5FA"/>
+  <text x="58" y="266" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">Python</text>
+  <rect x="190" y="252" width="360" height="14" rx="7" fill="#21262D"/>
+  <rect x="190" y="252" width="198" height="14" rx="7" fill="#60A5FA"/>
+  <text x="560" y="266" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">23,208</text>
+
+  <circle cx="42" cy="285" r="5" fill="#F97316"/>
+  <text x="58" y="290" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">HTML</text>
+  <rect x="190" y="276" width="360" height="14" rx="7" fill="#21262D"/>
+  <rect x="190" y="276" width="57" height="14" rx="7" fill="#F97316"/>
+  <text x="560" y="290" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">6,693</text>
+
+  <circle cx="42" cy="309" r="5" fill="#A78BFA"/>
+  <text x="58" y="314" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">Jupyter Notebook</text>
+  <rect x="190" y="300" width="360" height="14" rx="7" fill="#21262D"/>
+  <rect x="190" y="300" width="38" height="14" rx="7" fill="#A78BFA"/>
+  <text x="560" y="314" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">4,498</text>
+
+  <circle cx="42" cy="333" r="5" fill="#34D399"/>
+  <text x="58" y="338" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">Markdown</text>
+  <rect x="190" y="324" width="360" height="14" rx="7" fill="#21262D"/>
+  <rect x="190" y="324" width="37" height="14" rx="7" fill="#34D399"/>
+  <text x="560" y="338" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">4,323</text>
+
+  <circle cx="42" cy="357" r="5" fill="#F472B6"/>
+  <text x="58" y="362" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">CSS</text>
+  <rect x="190" y="348" width="360" height="14" rx="7" fill="#21262D"/>
+  <rect x="190" y="348" width="30" height="14" rx="7" fill="#F472B6"/>
+  <text x="560" y="362" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">3,538</text>
+</svg>
