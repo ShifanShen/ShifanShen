@@ -16,7 +16,7 @@
 - 📍 Based in Shanghai, China
 
 <p>
-  <img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=visitors&color=0e75b6&style=flat" />
+  <img src="https://komarev.com/ghpvc/?username=ShifanShen&label=visitors&color=0e75b6&style=flat" />
 </p>
 
 <!-- CODE-STATS:START -->
@@ -25,15 +25,15 @@
 </td>
 <td width="55%" valign="top">
 
-<img src="https://github-stats-extended.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&rank_icon=github" />
+<img src="https://github-stats-extended.vercel.app/api?username=ShifanShen&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&rank_icon=github" />
 
 <br />
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=YOUR_USERNAME&theme=github_dark" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ShifanShen&theme=github_dark" />
 
 <br />
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=YOUR_USERNAME&theme=github_dark" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ShifanShen&theme=github_dark" />
 
 </td>
 </tr>

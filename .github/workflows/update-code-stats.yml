@@ -54,17 +54,19 @@ jobs:
                           langs[lang] = langs.get(lang, 0) + stat.get("code", 0)
 
           top = sorted(langs.items(), key=lambda x: x[1], reverse=True)[:5]
-          lang_line = " · ".join(f"{k} {v:,}" for k, v in top)
+          lang_line = " | ".join(f"{k} {v:,}" for k, v in top) or "No code found yet"
 
-          block = f"""<!-- CODE-STATS:START -->
-### Code stats
-
-| Repositories | Code lines | Files |
-|---:|---:|---:|
-| {len(repos):,} | {total_code:,} | {total_files:,} |
-
-Top languages: {lang_line}
-<!-- CODE-STATS:END -->"""
+          block = "\n".join([
+              "<!-- CODE-STATS:START -->",
+              "### Code stats",
+              "",
+              "| Repositories | Code lines | Files |",
+              "|---:|---:|---:|",
+              f"| {len(repos):,} | {total_code:,} | {total_files:,} |",
+              "",
+              f"Top languages: {lang_line}",
+              "<!-- CODE-STATS:END -->",
+          ])
 
           readme = pathlib.Path("README.md")
           text = readme.read_text(encoding="utf-8")
