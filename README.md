@@ -11,12 +11,15 @@
 
 - 🌱 I’m currently learning AI Agents / LLM
 - 🧑‍💻 I enjoy building useful open-source projects
-- 💬 Let’s learn Python, AI, Web, and automation together
 - 📫 How to reach me: shen_shifan@qq.com
 - 📍 Based in Shanghai, China
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=ShifanShen&label=visitors&color=0e75b6&style=flat" />
+</p>
+
+<p align="center">
+  <img src="./assets/family-guy-dancing.gif" alt="Family Guy dancing" width="95%" />
 </p>
 
 </td>
