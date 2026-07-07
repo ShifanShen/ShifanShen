@@ -19,6 +19,16 @@
   <img src="https://komarev.com/ghpvc/?username=ShifanShen&label=visitors&color=0e75b6&style=flat" />
 </p>
 
+<p align="center">
+  <img src="./assets/mariobros3-walk.gif" alt="Mario walking" width="48" />
+  &nbsp;&nbsp;
+  <img src="./assets/legend-of-zelda-link.gif" alt="Link" width="54" />
+  &nbsp;&nbsp;
+  <img src="./assets/judd-splatoon.gif" alt="Judd from Splatoon" width="58" />
+  &nbsp;&nbsp;
+  <img src="./assets/shiny-gengar-ig.gif" alt="Shiny Gengar" width="54" />
+</p>
+
 </td>
 <td width="55%" valign="top">
 
@@ -33,8 +43,8 @@
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top">
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ShifanShen&theme=github_dark" width="100%" />
+<td colspan="2" valign="top" align="center">
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ShifanShen&theme=github_dark" width="86%" />
 </td>
 </tr>
 </table>
