@@ -21,21 +21,21 @@
   <text x="56" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">8</text>
   <rect x="226" y="126" width="166" height="74" rx="12" fill="#161B22"/>
   <text x="248" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">CODE LINES</text>
-  <text x="248" y="184" fill="#35D3BE" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">55.6k</text>
+  <text x="248" y="184" fill="#35D3BE" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">56.1k</text>
   <rect x="418" y="126" width="166" height="74" rx="12" fill="#161B22"/>
   <text x="440" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">FILES</text>
-  <text x="440" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">374</text>
+  <text x="440" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">375</text>
   <text x="34" y="236" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">Top languages</text>
   <text x="468" y="236" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12">lines counted by cloc</text>
   <circle cx="42" cy="269" r="5" fill="#60A5FA"/>
   <text x="58" y="274" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">Python</text>
   <rect x="190" y="260" width="360" height="14" rx="7" fill="#21262D"/>
-  <rect x="190" y="260" width="198" height="14" rx="7" fill="#60A5FA"/>
-  <text x="560" y="274" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">23,208</text>
+  <rect x="190" y="260" width="199" height="14" rx="7" fill="#60A5FA"/>
+  <text x="560" y="274" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">23,668</text>
   <circle cx="42" cy="293" r="5" fill="#F97316"/>
   <text x="58" y="298" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">HTML</text>
   <rect x="190" y="284" width="360" height="14" rx="7" fill="#21262D"/>
-  <rect x="190" y="284" width="57" height="14" rx="7" fill="#F97316"/>
+  <rect x="190" y="284" width="56" height="14" rx="7" fill="#F97316"/>
   <text x="560" y="298" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">6,693</text>
   <circle cx="42" cy="317" r="5" fill="#A78BFA"/>
   <text x="58" y="322" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">Jupyter Notebook</text>
@@ -46,7 +46,7 @@
   <text x="58" y="346" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">Markdown</text>
   <rect x="190" y="332" width="360" height="14" rx="7" fill="#21262D"/>
   <rect x="190" y="332" width="37" height="14" rx="7" fill="#34D399"/>
-  <text x="560" y="346" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">4,323</text>
+  <text x="560" y="346" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end">4,353</text>
   <circle cx="42" cy="365" r="5" fill="#F472B6"/>
   <text x="58" y="370" fill="#C9D1D9" font-family="Segoe UI, Arial, sans-serif" font-size="13">CSS</text>
   <rect x="190" y="356" width="360" height="14" rx="7" fill="#21262D"/>
