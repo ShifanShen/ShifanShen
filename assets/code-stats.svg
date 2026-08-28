@@ -15,10 +15,10 @@
   <rect x="8.5" y="8.5" width="603" height="371" rx="13.5" stroke="#30363D"/>
   <rect x="34" y="36" width="72" height="4" rx="2" fill="url(#accent)"/>
   <text x="34" y="72" fill="#79A7FF" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Code Footprint</text>
-  <text x="34" y="101" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="15">Across 8 public repositories</text>
+  <text x="34" y="101" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="15">Across 9 public repositories</text>
   <rect x="34" y="126" width="166" height="74" rx="12" fill="#161B22"/>
   <text x="56" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">REPOSITORIES</text>
-  <text x="56" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">8</text>
+  <text x="56" y="184" fill="#E6EDF3" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">9</text>
   <rect x="226" y="126" width="166" height="74" rx="12" fill="#161B22"/>
   <text x="248" y="157" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">CODE LINES</text>
   <text x="248" y="184" fill="#35D3BE" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="800">69.2k</text>
